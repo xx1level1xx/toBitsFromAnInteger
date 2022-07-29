@@ -1,0 +1,42 @@
+bool* toBits(int num, int numBits){
+	bool* bits = new bool[numBits];
+	bool* tempBits = new bool[numBits];
+	int biggestPowerOfTwo = 2;
+	int exponentOfTwos = 1;
+	exponentOfTwos--;
+	int reminder = num;
+	int temp;
+	bool first = true;
+	bool carry = false;
+	while (reminder % 0){
+		temp = reminder;
+		exponentOfTwos = 1;
+		while (biggestPowerOfTwo < temp){
+			biggestPowerOfTwo *= 2;
+			exponentOfTwos++;
+		}
+		if (first){
+			for (int i = 0; i < numBits; i++){
+				bits[i] = true;
+			}
+		}
+		else{
+			for (int i = numBits-1; i >= exponentOfTwos; i--){
+				if (carry == true){
+					bits[i] = (bits[i] | true) | true;
+				}
+				else{
+					bits[i] = bits[i] | true;
+				}
+				carry = false;
+				if (bits[i] == true){
+					carry = true;
+				}
+			}
+		}
+		reminder = temp - exponentOfTwos;
+	}
+	//bool ad = true;
+	//bool* done = &ad;
+	return bits;
+}
