@@ -3,7 +3,6 @@ bool* toBits(int num, int numBits){
 	bool* tempBits = new bool[numBits];
 	int biggestPowerOfTwos = 2;
 	int exponentOfTwos = 1;
-	exponentOfTwos--;
 	int remainder = num;
 	int temp;
 	bool first = true;
