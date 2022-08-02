@@ -28,6 +28,11 @@ bool* toBits(int num, int numBits){
 		}
 		remainder -= biggestPowerOfTwos;
 	}
+	if (first){
+		for (int i = 0; i < numBits; i++){
+			bits[i] = false;
+		}
+	}
 	if (remainder == 1){
 		bits[numBits - 1] = true;
 	}
